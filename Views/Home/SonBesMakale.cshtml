@@ -1,0 +1,21 @@
+﻿
+@model List<MvcProjesi.Data.Makale>
+
+@{
+    
+    <div style="border:1px solid black;padding:25px;text-align:center;">
+        <h2>Son Beş Makale</h2>
+        
+        @foreach (var item in Model)
+        {
+            
+        <div style="border:1px solid black">
+           
+            @Html.ActionLink(item.Baslik, "MakaleDetay", new { makaleId = item.MakaleId })
+            <p>@item.Icerik</p>
+            <strong>Tarih : @item.Tarih </strong>
+        </div>
+        }
+    </div>
+}
+
